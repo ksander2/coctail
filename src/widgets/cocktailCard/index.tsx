@@ -42,6 +42,7 @@ export const CocktailCard: React.FC<{ cocktail: Coctail }> = ({ cocktail }) => {
             src={cocktail.strDrinkThumb} 
             alt={cocktail.strDrink} 
             className="cocktail-image"
+            loading='lazy'
             onError={(e) => {
               (e.target as HTMLImageElement).src = '/placeholder-cocktail.png';
             }}

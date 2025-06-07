@@ -4,9 +4,9 @@ import { fetchCoctails } from '../../store/coctailSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import type { AppDispatch, RootState } from '../../store';
 import { Menu } from '../../components';
-import './styles.css'
 import { CocktailCard } from '../../widgets/cocktailCard';
 import type { Coctail } from '../../models/coctail';
+import './styles.css'
 
 const coctailNames = ["margarita", "mojito", "a1", "kir"];
 
@@ -17,7 +17,6 @@ export const CoctailViewPage = () => {
   const [cocktailNameSelected, setCocktailNameSelected] = useState<string>();
 
   const coctails = useSelector<RootState>(state => state.coctails.data) as Coctail[];
-  console.log("df",coctails);
 
   useEffect(() => {
     const cocktailName = searchParams.get('coctail');
