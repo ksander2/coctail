@@ -1,0 +1,26 @@
+.responsive-box {
+  width: 1200px;
+  min-width: 300px;
+  max-width: 100%;
+  margin: 0 auto;
+  border: 2px solid black;
+}
+
+@media (max-width: 1200px) {
+  .responsive-box {
+    width: 90vw; 
+  }
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 30% 70%; 
+  height: 700px;
+}
+
+.col-30, .col-70 {
+  border-right: 1px solid black;
+  height: 700px;
+  overflow: auto;
+}

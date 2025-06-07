@@ -1,0 +1,36 @@
+
+.menu-container {
+  position: relative;
+  width: 100%;
+}
+
+.menu-list {
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu-item {
+  margin: 0 0;
+}
+
+.menu-link {
+  text-decoration: none;
+  color: #333;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.menu-link:hover {
+  color: #007bff;
+}
+
+.menu-item-block {
+  cursor: pointer;
+}
+
+.active {
+   background: yellow;
+}
