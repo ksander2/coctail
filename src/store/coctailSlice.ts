@@ -1,11 +1,13 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import type { Coctail } from '../models/coctail';
+import httpClient from '../servises/httpClient';
 
+type CocktailsResponse = {drinks: Coctail[]};
 
-const fetchCoctailsAPI = async (coctailName: string): Promise<{drinks: Coctail[]}> => {
-  const response = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${coctailName}`);
-  if (!response.ok) throw new Error('Failed to fetch');
-  return response.json();
+const fetchCoctailsAPI = async (coctailName: string): Promise<CocktailsResponse> => {
+  const response = await httpClient.get<CocktailsResponse>(`/1/search.php?s=${coctailName}`);
+  
+  return response.data;
 };
 
 export const fetchCoctails = createAsyncThunk(
